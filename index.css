@@ -1,0 +1,8 @@
+/* Base styles for ContentAudit AI */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-blue: #3b82f6;
+}

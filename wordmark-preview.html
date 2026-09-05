@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Content Audit — wordmark & logo previews</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --netpeak: #29abe2;
+      --netpeak-banner: #a7d5f0;
+      --slate-900: #0f172a;
+      --slate-700: #334155;
+      --slate-500: #64748b;
+      --slate-200: #e2e8f0;
+      --bg: #f8fafc;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--slate-900);
+      padding: 40px;
+    }
+    h2.section {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--slate-500);
+      margin: 48px auto 16px auto;
+      max-width: 1200px;
+    }
+    h2.section:first-of-type { margin-top: 0; }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .grid.two { grid-template-columns: repeat(2, 1fr); }
+    .card {
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: 16px;
+      padding: 26px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 100px;
+    }
+    .card.dark { background: var(--netpeak-banner); }
+    .label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--slate-500);
+      min-width: 140px;
+    }
+    .card.dark .label { color: rgba(255,255,255,0.85); }
+    .mark { display: flex; align-items: center; gap: 14px; }
+    .star-img { width: 40px; height: 40px; }
+    .star-img.lg { width: 52px; height: 52px; }
+    .star-img.sm { width: 30px; height: 30px; }
+
+    h1.preview-title {
+      max-width: 1200px;
+      margin: 0 auto 16px auto;
+      font-size: 22px;
+      font-weight: 900;
+    }
+    p.intro {
+      max-width: 1200px;
+      margin: 0 auto 32px auto;
+      font-size: 13px;
+      color: var(--slate-500);
+      line-height: 1.6;
+    }
+
+    /* ───────────────────────────────────────────────────────────────────────── */
+    /*  LOGO VARIANTS — "netpeak" wordmark + "Powered by AI Solutions" caption   */
+    /* ───────────────────────────────────────────────────────────────────────── */
+
+    /* L1: star + "netpeak" bold + caption below in caps */
+    .logo-L1 .stack { display: flex; flex-direction: column; line-height: 1; }
+    .logo-L1 .name {
+      font-weight: 900; font-size: 26px; letter-spacing: -0.01em;
+      color: var(--netpeak);
+    }
+    .logo-L1 .cap {
+      margin-top: 4px;
+      font-weight: 700; font-size: 9px; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--netpeak);
+    }
+
+    /* L2: star + "netpeak" bold (slate) + caption brand-blue */
+    .logo-L2 .stack { display: flex; flex-direction: column; line-height: 1; }
+    .logo-L2 .name {
+      font-weight: 900; font-size: 26px; letter-spacing: -0.01em;
+      color: var(--slate-900);
+    }
+    .logo-L2 .cap {
+      margin-top: 4px;
+      font-weight: 700; font-size: 9px; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--netpeak);
+    }
+
+    /* L3: star alone + caption (no wordmark) */
+    .logo-L3 .cap {
+      font-weight: 800; font-size: 11px; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--netpeak); line-height: 1.2;
+    }
+
+    /* L4: stacked tight — name above caption */
+    .logo-L4 { gap: 12px; }
+    .logo-L4 .stack { display: flex; flex-direction: column; gap: 2px; line-height: 1; }
+    .logo-L4 .name {
+      font-weight: 900; font-size: 22px; color: var(--netpeak);
+    }
+    .logo-L4 .cap {
+      font-weight: 600; font-size: 9px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--slate-700);
+    }
+
+    /* L5: divider style — name | caption side-by-side */
+    .logo-L5 .row { display: flex; align-items: center; gap: 14px; }
+    .logo-L5 .name {
+      font-weight: 900; font-size: 22px; color: var(--netpeak); line-height: 1;
+    }
+    .logo-L5 .divider {
+      width: 1px; height: 22px; background: var(--slate-200);
+    }
+    .logo-L5 .cap {
+      font-weight: 700; font-size: 10px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--slate-700); line-height: 1.2;
+    }
+
+    /* L6: on the actual banner background (light cyan) */
+    .logo-L6 { background: var(--netpeak-banner); }
+    .logo-L6 .stack { display: flex; flex-direction: column; line-height: 1; }
+    .logo-L6 .name {
+      font-weight: 900; font-size: 26px; color: white;
+    }
+    .logo-L6 .cap {
+      margin-top: 4px;
+      font-weight: 700; font-size: 9px; letter-spacing: 0.22em;
+      text-transform: uppercase; color: white;
+    }
+
+    /* ───────────────────────────────────────────────────────────────────────── */
+    /*  EXISTING: AI Content Audit wordmark variants                              */
+    /* ───────────────────────────────────────────────────────────────────────── */
+
+    .mark-A .text { font-weight: 800; font-size: 22px; letter-spacing: -0.01em; color: var(--slate-900); line-height: 1; }
+    .mark-A .text .ai { color: var(--netpeak); }
+    .mark-B .text { font-weight: 700; font-size: 14px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--netpeak); line-height: 1; }
+    .mark-C .text { font-size: 20px; letter-spacing: -0.005em; line-height: 1; color: var(--slate-900); }
+    .mark-C .text .ai { font-weight: 900; color: var(--netpeak); margin-right: 6px; }
+    .mark-C .text .rest { font-weight: 600; }
+    .mark-D .text { font-weight: 800; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--netpeak); line-height: 1.1; }
+    .mark-E .text { font-weight: 900; font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--netpeak); line-height: 1; }
+    .mark-F .text { font-weight: 800; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: white; background: var(--netpeak); padding: 8px 14px; border-radius: 999px; line-height: 1; }
+
+    /* ─── Mock navbar that puts logo (left) + wordmark (right) together ── */
+    .nav-preview {
+      max-width: 1200px;
+      margin: 24px auto 0 auto;
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: 16px;
+      padding: 14px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-preview .stack { display: flex; flex-direction: column; gap: 3px; line-height: 1; }
+    .nav-preview .nm { font-weight: 900; font-size: 22px; color: var(--netpeak); }
+    .nav-preview .cap {
+      font-weight: 700; font-size: 9px; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--netpeak);
+    }
+    .nav-preview .right { font-weight: 900; font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--netpeak); }
+
+    .footer-note {
+      max-width: 1200px;
+      margin: 32px auto 0 auto;
+      font-size: 12px;
+      color: var(--slate-500);
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="preview-title">Logo &amp; wordmark previews</h1>
+  <p class="intro">
+    Caption now reads <b>Powered by AI&nbsp;Solutions</b> (was «AI Department»).
+    Block 1 — logo lock-ups (star + “netpeak” + caption).
+    Block 2 — “AI Content Audit” wordmark variants for the right side of the navbar.
+  </p>
+
+  <h2 class="section">1. Logo lock-ups (netpeak + Powered by AI Solutions)</h2>
+  <div class="grid">
+
+    <div class="card logo-L1">
+      <span class="label">L1 · Brand-blue name + brand-blue caption</span>
+      <div class="mark">
+        <img src="./public/netpeak-footer-star.png" class="star-img lg" alt="">
+        <div class="stack">
+          <span class="name">netpeak</span>
+          <span class="cap">Powered by AI Solutions</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card logo-L2">
+      <span class="label">L2 · Dark name + brand-blue caption</span>
+      <div class="mark">
+        <img src="./public/netpeak-footer-star.png" class="star-img lg" alt="">
+        <div class="stack">
+          <span class="name">netpeak</span>
+          <span class="cap">Powered by AI Solutions</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card logo-L3">
+      <span class="label">L3 · Star only + caption</span>
+      <div class="mark">
+        <img src="./public/netpeak-footer-star.png" class="star-img lg" alt="">
+        <span class="cap">Powered by<br>AI Solutions</span>
+      </div>
+    </div>
+
+    <div class="card logo-L4">
+      <span class="label">L4 · Tight stacked</span>
+      <div class="mark">
+        <img src="./public/netpeak-footer-star.png" class="star-img" alt="">
+        <div class="stack">
+          <span class="name">netpeak</span>
+          <span class="cap">Powered by AI Solutions</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card logo-L5">
+      <span class="label">L5 · Inline with divider</span>
+      <div class="mark">
+        <img src="./public/netpeak-footer-star.png" class="star-img" alt="">
+        <div class="row">
+          <span class="name">netpeak</span>
+          <span class="divider"></span>
+          <span class="cap">Powered by<br>AI Solutions</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card logo-L6">
+      <span class="label">L6 · On Netpeak banner (white text)</span>
+      <div class="mark">
+        <img src="./public/netpeak-footer-star.png" class="star-img lg" alt="" style="filter: brightness(0) invert(1);">
+        <div class="stack">
+          <span class="name">netpeak</span>
+          <span class="cap">Powered by AI Solutions</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <h2 class="section">2. “AI Content Audit” wordmark (right side of the navbar)</h2>
+  <div class="grid">
+    <div class="card mark-A">
+      <span class="label">A · Bold one-liner</span>
+      <div class="mark">
+        <img src="./public/netpeak-footer-star.png" class="star-img" alt="">
+        <span class="text"><span class="ai">AI</span> Content Audit</span>
+      </div>
+    </div>
+    <div class="card mark-B">
+      <span class="label">B · Caps, brand blue</span>
+      <div class="mark">
+        <img src="./public/netpeak-footer-star.png" class="star-img" alt="">
+        <span class="text">AI&nbsp;Content&nbsp;Audit</span>
+      </div>
+    </div>
+    <div class="card mark-C">
+      <span class="label">C · Mixed weights</span>
+      <div class="mark">
+        <img src="./public/netpeak-footer-star.png" class="star-img" alt="">
+        <span class="text"><span class="ai">AI</span><span class="rest">Content Audit</span></span>
+      </div>
+    </div>
+    <div class="card mark-D">
+      <span class="label">D · Stacked (old)</span>
+      <div class="mark">
+        <img src="./public/netpeak-footer-star.png" class="star-img" alt="">
+        <span class="text">AI Content<br>Audit</span>
+      </div>
+    </div>
+    <div class="card mark-E">
+      <span class="label">E · Black caps, tight (current)</span>
+      <div class="mark">
+        <img src="./public/netpeak-footer-star.png" class="star-img" alt="">
+        <span class="text">AI&nbsp;CONTENT&nbsp;AUDIT</span>
+      </div>
+    </div>
+    <div class="card mark-F">
+      <span class="label">F · Pill / badge</span>
+      <div class="mark">
+        <img src="./public/netpeak-footer-star.png" class="star-img" alt="">
+        <span class="text">AI Content Audit</span>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section">3. Navbar mock (L1 logo + E wordmark — current setup, updated caption)</h2>
+  <div class="nav-preview">
+    <div class="mark">
+      <img src="./public/netpeak-footer-star.png" class="star-img" alt="">
+      <div class="stack">
+        <span class="nm">netpeak</span>
+        <span class="cap">Powered by AI Solutions</span>
+      </div>
+    </div>
+    <span class="right">AI&nbsp;CONTENT&nbsp;AUDIT</span>
+  </div>
+
+  <p class="footer-note">
+    Скажи літери: яка пара логотип (L1–L6) + wordmark (A–F) піде в навбар і на екран входу.
+    Поточний live-варіант: L4 (star + “netpeak” + Powered by AI Department) + E.
+    Caption уже планується змінити на <b>Powered by AI Solutions</b> у коді одразу після
+    того, як ти затвердиш візуальну версію.
+  </p>
+</body>
+</html>

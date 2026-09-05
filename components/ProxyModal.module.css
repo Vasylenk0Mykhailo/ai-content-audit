@@ -1,0 +1,115 @@
+.overlay {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 backdrop-blur-sm p-4 overflow-y-auto;
+}
+.modal {
+  @apply bg-white w-full max-w-2xl rounded-xl border border-gray-200 shadow-2xl flex flex-col max-h-[90vh];
+}
+
+/* Header */
+.header {
+  @apply p-6 border-b border-gray-200 flex justify-between items-center bg-white rounded-t-xl sticky top-0 z-10;
+}
+.headerTitle {
+  @apply text-xl font-bold text-slate-900 flex items-center gap-2;
+}
+.headerTitleIcon {
+  @apply w-6 h-6 text-green-600;
+}
+.headerSubtitle {
+  @apply text-slate-500 text-sm mt-1;
+}
+.closeButton {
+  @apply text-slate-400 hover:text-slate-600 transition-colors;
+}
+.closeIcon {
+  @apply w-6 h-6;
+}
+
+/* Body */
+.body {
+  @apply flex-1 overflow-y-auto p-6 space-y-6 bg-white;
+}
+
+/* Add proxy form */
+.formSection {
+  @apply bg-gray-50 p-5 rounded-lg border border-gray-200 shadow-sm;
+}
+.formTitle {
+  @apply text-sm font-bold text-slate-900 mb-3 uppercase tracking-wide;
+}
+.formGrid {
+  @apply grid grid-cols-1 md:grid-cols-12 gap-3;
+}
+.colProtocol { @apply md:col-span-2; }
+.colIp       { @apply md:col-span-4; }
+.colPort     { @apply md:col-span-2; }
+.colUser     { @apply md:col-span-2; }
+.colPass     { @apply md:col-span-2; }
+
+.fieldLabel {
+  @apply text-xs font-semibold text-slate-500 mb-1.5 ml-1 block;
+}
+.fieldInput {
+  @apply w-full bg-white border border-gray-300 rounded-xl px-3 py-2.5 text-sm outline-none focus:ring-1 focus:ring-green-500 shadow-sm;
+}
+.formFooter {
+  @apply mt-4 flex justify-end;
+}
+.addButton {
+  @apply px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-medium rounded-lg shadow-sm disabled:opacity-50 transition-colors;
+}
+
+/* Proxy list */
+.listSection {
+  @apply space-y-3;
+}
+.listTitle {
+  @apply text-sm font-bold text-slate-900 uppercase tracking-wide;
+}
+.emptyState {
+  @apply text-center py-8 text-slate-400 text-sm border-2 border-dashed border-gray-200 rounded-lg;
+}
+.proxyItem {
+  @apply flex items-center justify-between bg-white p-3 rounded-lg border border-gray-200 shadow-sm;
+}
+.proxyLeft {
+  @apply flex items-center gap-4;
+}
+.proxyInfo {
+  @apply flex flex-col;
+}
+.proxyMeta {
+  @apply flex items-center gap-2;
+}
+.proxyAddress {
+  @apply font-mono text-sm font-bold text-slate-800;
+}
+.proxyProtocol {
+  @apply text-[10px] uppercase bg-gray-100 px-1.5 py-0.5 rounded text-slate-500 border border-gray-200;
+}
+.proxyAuth {
+  @apply text-xs text-slate-500;
+}
+.statusDot {
+  @apply w-4 h-4 rounded-full border;
+}
+.statusDotActive {
+  @apply bg-green-500 border-green-600;
+}
+.statusDotInactive {
+  @apply bg-gray-200 border-gray-300;
+}
+.deleteButton {
+  @apply p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded transition-colors;
+}
+.deleteIcon {
+  @apply w-5 h-5;
+}
+
+/* Footer */
+.footer {
+  @apply p-6 border-t border-gray-200 bg-gray-50 rounded-b-xl flex justify-end sticky bottom-0 z-10;
+}
+.doneButton {
+  @apply px-5 py-2 bg-slate-800 hover:bg-slate-900 text-white font-medium rounded-lg shadow transition-colors;
+}

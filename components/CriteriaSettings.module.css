@@ -1,0 +1,63 @@
+.card {
+  @apply bg-white p-5 rounded-xl shadow-lg border border-white space-y-4 flex flex-col;
+}
+.cardTitle {
+  @apply text-xs font-bold text-slate-900 flex items-center gap-2 uppercase tracking-wide;
+}
+.titleAccent {
+  @apply w-1 h-3 bg-blue-500 rounded-full;
+}
+.fieldsSection {
+  @apply space-y-3;
+}
+.twoColGrid {
+  @apply grid grid-cols-2 gap-2;
+}
+
+/* Audit points */
+.auditPointsHeader {
+  @apply flex justify-between items-center mb-2 ml-1;
+}
+.auditPointsLabel {
+  @apply block text-[10px] font-semibold text-slate-500;
+}
+.auditPointsActions {
+  @apply flex gap-2;
+}
+.selectAllButton {
+  @apply text-[9px] font-medium text-blue-600 hover:text-blue-800 transition-colors;
+}
+.divider {
+  @apply text-[9px] text-slate-300;
+}
+.clearAllButton {
+  @apply text-[9px] font-medium text-slate-400 hover:text-slate-600 transition-colors;
+}
+.auditPointsGrid {
+  @apply grid grid-cols-2 gap-2 bg-slate-50 p-3 rounded-lg border border-slate-100 max-h-48 overflow-y-auto;
+}
+.checkboxLabel {
+  @apply flex items-center gap-2 cursor-pointer;
+}
+.checkboxWrapper {
+  @apply relative flex items-center;
+}
+.checkboxInput {
+  @apply appearance-none w-3.5 h-3.5 border border-slate-300 rounded checked:bg-blue-500 checked:border-blue-500 transition-all;
+}
+.checkboxTick {
+  @apply absolute w-2.5 h-2.5 text-white pointer-events-none opacity-0 left-0.5 top-0.5;
+}
+.checkboxInput:checked ~ .checkboxTick { opacity: 1; }
+.checkboxText {
+  @apply text-[10px] text-slate-600 transition-colors select-none;
+}
+.checkboxLabel:hover .checkboxText { color: rgb(15 23 42); }
+
+/* Custom instructions */
+.instructionsLabel {
+  @apply block text-[10px] font-semibold text-slate-500 mb-1 ml-1;
+}
+.instructionsTextarea {
+  @apply w-full bg-slate-50 border border-slate-200 rounded-lg p-3 text-sm text-slate-900 h-24 focus:ring-1 focus:border-blue-500 outline-none resize-none transition-all placeholder-slate-400 shadow-sm;
+}

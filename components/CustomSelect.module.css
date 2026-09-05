@@ -1,0 +1,48 @@
+.wrapper {
+  @apply relative;
+}
+.label {
+  @apply block text-xs font-semibold text-slate-500 mb-1.5 ml-1;
+}
+.trigger {
+  @apply w-full flex items-center justify-between bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 shadow-sm transition-all duration-200 hover:border-blue-400 focus:ring-2 focus:ring-blue-100 outline-none;
+}
+.triggerOpen {
+  @apply border-blue-500 ring-2 ring-blue-100;
+}
+.triggerInner {
+  @apply flex items-center gap-2 truncate;
+}
+.triggerIcon {
+  @apply text-slate-400;
+}
+.triggerPlaceholder {
+  @apply text-slate-400 truncate;
+}
+.triggerValue {
+  @apply truncate;
+}
+.chevron {
+  @apply w-4 h-4 text-slate-400 transition-transform duration-200;
+}
+.chevronOpen {
+  @apply rotate-180;
+}
+.dropdown {
+  @apply absolute z-50 w-full mt-2 bg-white border border-slate-100 rounded-xl shadow-xl max-h-60 overflow-auto animate-in fade-in zoom-in-95 duration-100;
+}
+.dropdownInner {
+  @apply p-1;
+}
+.option {
+  @apply w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors flex items-center justify-between;
+}
+.optionDefault {
+  @apply text-slate-700 hover:bg-slate-50;
+}
+.optionSelected {
+  @apply bg-blue-50 text-blue-700 font-medium;
+}
+.optionCheckIcon {
+  @apply w-4 h-4 text-blue-600;
+}

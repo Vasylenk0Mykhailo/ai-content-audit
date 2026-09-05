@@ -1,0 +1,5 @@
+{
+  "name": "ContentAudit AI",
+  "description": "Professional web content analyzer for SEO, EEAT, and YMYL compliance using Gemini models. Features live scraping, bulk analysis, and detailed actionable reporting.",
+  "requestFramePermissions": []
+}

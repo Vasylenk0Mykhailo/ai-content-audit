@@ -1,0 +1,198 @@
+/* Light theme aligned with the rest of the app (white card, blue accents). */
+
+.card {
+  @apply bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 mb-10 animate-in fade-in slide-in-from-top-4 duration-500;
+}
+.body {
+  @apply p-8;
+}
+
+/* Top row */
+.topRow {
+  @apply flex flex-col md:flex-row justify-between items-start gap-6;
+}
+.topLeft {
+  @apply space-y-3 max-w-2xl;
+}
+.badgeRow {
+  @apply flex items-center gap-3;
+}
+.activeBadge {
+  @apply px-3 py-1 bg-blue-50 text-blue-700 text-[10px] font-bold uppercase tracking-[0.18em] rounded-full border border-blue-100;
+}
+.modelBadge {
+  @apply px-3 py-1 bg-blue-50 text-blue-700 text-[10px] font-black uppercase tracking-[0.14em] rounded-full border border-blue-100;
+}
+.exportButton {
+  @apply flex items-center gap-2 px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-[10px] font-bold rounded-full transition-all active:scale-95 disabled:opacity-50 shadow-sm;
+}
+.exportSpinner {
+  @apply w-3 h-3 border-2 border-white/30 border-t-white rounded-full animate-spin;
+}
+.exportIcon {
+  @apply w-3.5 h-3.5;
+}
+.mainTitle {
+  @apply text-3xl font-black text-slate-900 leading-tight;
+}
+.strategicAdvice {
+  @apply text-slate-600 text-base leading-relaxed italic;
+}
+
+/* Score card */
+.scoreCard {
+  @apply flex flex-col items-center justify-center p-6 bg-slate-50 rounded-2xl border border-slate-100 min-w-[180px];
+}
+.scoreValue {
+  @apply text-5xl font-black text-blue-600;
+}
+.scoreLabel {
+  @apply text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-2 text-center;
+}
+.scoreBadge {
+  @apply mt-3 px-3 py-1 bg-blue-100 text-blue-700 text-[10px] font-bold rounded-lg;
+}
+
+/* Analysed URLs */
+.urlsCard {
+  @apply bg-slate-50 rounded-2xl p-5 border border-slate-100 mt-6;
+}
+.urlsTitle {
+  @apply text-[11px] font-black text-blue-700 uppercase tracking-[0.18em] mb-3;
+}
+.urlsList {
+  @apply space-y-1.5 list-none p-0 m-0;
+}
+.urlsLink {
+  @apply text-[12px] text-blue-700 hover:text-blue-900 hover:underline break-all transition-colors;
+}
+
+/* Pillars */
+.pillarsGrid {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-4 mt-8;
+}
+.pillarCard {
+  @apply bg-slate-50 p-5 rounded-2xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50/40 transition-all;
+}
+.pillarLabel {
+  @apply text-[10px] font-black text-blue-600 uppercase tracking-widest mb-2 block;
+}
+.pillarTitle {
+  @apply text-slate-900 font-bold text-base mb-2 transition-colors;
+}
+.pillarCard:hover .pillarTitle { color: rgb(37 99 235); }
+.pillarDescription {
+  @apply text-slate-600 text-xs leading-relaxed;
+}
+
+/* Bottom grid */
+.bottomGrid {
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8;
+}
+.leftCol {
+  @apply space-y-6;
+}
+.rightCol {
+  @apply space-y-6;
+}
+
+/* Roadmap */
+.roadmapCard {
+  @apply bg-slate-50 rounded-2xl p-6 border border-slate-100;
+}
+.roadmapTitle {
+  @apply text-[11px] font-black text-blue-700 uppercase tracking-[0.18em] mb-4 flex items-center gap-2;
+}
+.roadmapIcon {
+  @apply w-4 h-4;
+}
+.roadmapList {
+  @apply space-y-3;
+}
+.roadmapStep {
+  @apply flex gap-3 items-start;
+}
+.roadmapStepNumber {
+  @apply w-7 h-7 shrink-0 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center text-xs font-bold;
+}
+.roadmapStepText {
+  @apply text-slate-800 text-sm leading-snug pt-1;
+}
+
+/* Gap analysis */
+.gapCard {
+  @apply bg-blue-50/60 rounded-2xl p-6 border border-blue-100;
+}
+.gapTitle {
+  @apply text-[11px] font-black text-blue-700 uppercase tracking-[0.18em] mb-3;
+}
+.gapText {
+  @apply text-slate-700 text-sm leading-relaxed italic;
+}
+
+/* Vulnerabilities */
+.vulnerabilitiesCard {
+  @apply bg-slate-50 rounded-2xl p-6 border border-slate-100;
+}
+.vulnerabilitiesTitle {
+  @apply text-[11px] font-black text-rose-700 uppercase tracking-[0.18em] mb-4 flex items-center gap-2;
+}
+.vulnerabilitiesIcon {
+  @apply w-4 h-4;
+}
+.vulnerabilitiesList {
+  @apply space-y-3;
+}
+.vulnerabilityItem {
+  @apply flex gap-3 text-slate-800 text-sm leading-snug items-start;
+}
+.vulnerabilityBadge {
+  @apply w-6 h-6 shrink-0 bg-rose-100 text-rose-700 rounded-lg flex items-center justify-center text-[10px] font-bold transition-transform;
+}
+.vulnerabilityItem:hover .vulnerabilityBadge { transform: scale(1.1); }
+
+/* Opportunities */
+.opportunitiesCard {
+  @apply bg-slate-50 rounded-2xl p-6 border border-slate-100;
+}
+.opportunitiesTitle {
+  @apply text-[11px] font-black text-emerald-700 uppercase tracking-[0.18em] mb-4 flex items-center gap-2;
+}
+.opportunitiesIcon {
+  @apply w-4 h-4;
+}
+.opportunitiesList {
+  @apply flex flex-wrap gap-2;
+}
+.opportunityChip {
+  @apply px-3 py-1.5 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-lg border border-emerald-100;
+}
+
+/* Aggregated insights (Keyword Gaps / LSI Entities / GEO Anchors) */
+.aggregatedGrid {
+  @apply grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8;
+}
+.aggregatedCard {
+  @apply bg-slate-50 rounded-2xl p-6 border border-slate-100;
+}
+.aggregatedTitleRed {
+  @apply text-[11px] font-black text-rose-700 uppercase tracking-[0.18em] mb-4;
+}
+.aggregatedTitleBlue {
+  @apply text-[11px] font-black text-blue-700 uppercase tracking-[0.18em] mb-4;
+}
+.aggregatedTitleGreen {
+  @apply text-[11px] font-black text-emerald-700 uppercase tracking-[0.18em] mb-4;
+}
+.chipRow {
+  @apply flex flex-wrap gap-2;
+}
+.chipRed {
+  @apply px-3 py-1 bg-rose-50 text-rose-700 text-[11px] font-semibold rounded-lg border border-rose-100;
+}
+.chipBlue {
+  @apply px-3 py-1 bg-blue-50 text-blue-700 text-[11px] font-semibold rounded-lg border border-blue-100;
+}
+.chipGreen {
+  @apply px-3 py-1 bg-emerald-50 text-emerald-700 text-[11px] font-semibold rounded-lg border border-emerald-100;
+}
